@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-app.use("/", indexRouter);
 app.use("/new", newRouter);
+app.use("/", indexRouter);
 
 app.listen(PORT);
