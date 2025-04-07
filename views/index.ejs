@@ -5,16 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	</head>
 	<body>
-		<% for (let i = 0; i < messages.length; i++) { %>
-		<h2><%= messages[i].user%></h2>
-
-		<p><%= messages[i].text %></p>
-		<p><%= messages[i].added %></p>
-
-		<%}%>
-
 		<form action="/new" method="GET">
 			<button type="submit">Add A New Message</button>
 		</form>
+
+		<% for (let i = 0; i < messages.length; i++) { %>
+		<h2><%= messages[i].user%></h2>
+		<p><%= messages[i].text %></p>
+		<p><%= messages[i].added %></p>
+		<form action="/<%= messages[i].id%>" method="GET">
+			<button type="submit">Open</button>
+		</form>
+
+		<%}%>
 	</body>
 </html>
